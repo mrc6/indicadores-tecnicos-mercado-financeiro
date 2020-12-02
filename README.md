@@ -4,7 +4,7 @@ Seja em vindo ao nosso repositório.
 O objetivo deste repositório é entregar duas ferramentas técnicas a Média Móvel Exponencial (MME) e o Índice de Força Relativa (IRF) que serão gerados a partir de uam base de dados em um arquivo csv.
 
 Resumo:<br />
-1 - <a href="#ind_choose">Escolha dos Indicadores</a><br />
+1 - <a href="#ind_choose">Escolha dos indicadores</a><br />
 2 - <a href="#data">A base de dados</a><br />
 3 - <a href="#how_to_install">Como instalar o programa</a>
 <br />
@@ -31,3 +31,29 @@ Resumo:<br />
 - Instale as dependências com o comando: `python3 -m pip install -r requirements.txt`
 - Entre na pasta principal do projeto com o comando: `cd project`
 - Execute o programa com o comando: `python3 cli.py`
+
+# <span>4</span> Como usar o programa
+- Como você pode ver a interação com o programa é feito pelo próprio terminal
+- Antes de começar cole a base de dados que você fez o download no diretório `data`
+- Como já tem um arquivo neste diretório com o mesmo nome você deve reescrevê-lo para que você tenha a base de dados atualizada
+- A interação é dada por Menus
+
+# Menu principal
+- Neste menu existem as seguintes opções: 1 - Criar Relatorio MME + IFR, 2 - Mostrar Configurações dos Indicadores, 3 - Alterar Configurações dos Indicadores, 4 - Mudar Nome da Base de Dados, 9 - Sair
+- Para acessar cada menu digite o número do menu e tecle `ENTER`
+# Menu Criar Relatorio MME + IFR
+- Neste menu você criará um arquivo `rel.csv`  no diretório `data` com os indicadores MME e IFR calculado sobre a base de dados com as configurações atuais
+- Parâmetros de entrada: data inicial e data final dos dados a serem atualizados
+# Menu Mostrar Configurações dos Indicadores
+- Este menu mostra as configurações dos indicadores e o valor do preço usado para calcular o relatório do menu anterior
+- O mesmo tipo de preço é aplicado nos dois indicadores técnicos
+erem atualizados
+# Menu Alterar Configurações dos Indicadores
+- Neste menu você pode alterar as configurações dos indicadores técnicos antes de criar o relatório do primeiro menu
+- As configurações (ou parâmetros) que podem ser alterados são: Período da MME, Período da IRF e o Tipo de Preço a ser usado nos cálculos
+# Menu Mudar Nome da Base de Dados
+- Caso o nome do arquivo da base de dados mude, você deve configurar o nome do novo arquivo neste menu
+- A base de dados deve ser um arquivo `.csv` que siga a mesma estrutura do arquivo de exemplo que vem ao baixar esse repositório
+- A base de dados deve ser salva no diretório `data`
+# Menu Sair
+- Termina a execução do programa
