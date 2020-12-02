@@ -41,6 +41,7 @@ Resumo:<br />
 - Instale as dependências com o comando: `python3 -m pip install -r requirements.txt`
 - Entre na pasta principal do projeto com o comando: `cd project`
 - Execute o programa com o comando: `python3 cli.py`
+- Ao terminar de usar o programa, saia do ambiente virtual com o seguinte comando: `deactivate`
 
 # <span id="how_to_use">4</span> Como usar o programa
 - Como você pode ver a interação com o programa é feita pelo próprio terminal
