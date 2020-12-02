@@ -1,4 +1,5 @@
 # Indicadores Técnicos do Mercado Financeiro
+#(Python >= 3.6)
 
 Seja em vindo ao nosso repositório.
 O objetivo deste repositório é entregar duas ferramentas técnicas a Média Móvel Exponencial (MME) e o Índice de Força Relativa (IRF) que serão gerados a partir de uam base de dados em um arquivo csv.
@@ -58,4 +59,4 @@ erem atualizados
 # Menu Sair
 - Termina a execução do programa
 
-# <span id="comments">4</span> Comentários
+# <span id="comments">5</span> Comentários
