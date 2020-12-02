@@ -1,4 +1,4 @@
-# indicadores-tecnicos-mercado-financeiro
+# Indicadores Tecnicos do Mercado Financeiro
 
 Seja em vindo ao nosso repositório.
 O objetivo deste repositório é entregar duas ferramentas técnicas a Média Móvel Exponencial (MME) e o Índice de Força Relativa (IRF) que serão gerados a partir de uam base de dados em um arquivo csv.
