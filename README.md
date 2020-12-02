@@ -15,3 +15,9 @@ Resumo:<br />
 
 # <span id="ind_choose">1</span> - Escolha dos indicadores
 
+# <span id="how_to_install"> Como instalar o programa</span>
+- Todos os comando abaixo deverão ser executados no Terminal do Linux
+- A versão do Python usada deverá ser >= 3.6
+- Para baixar o repositório digite `git clone `
+- Para instalar as dependências digite o seguinte comando: `python3 -m pip install -r requirements.txt`
+
