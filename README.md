@@ -2,7 +2,7 @@
 # (Python >= 3.6)
 
 Seja em vindo ao nosso repositório.
-O objetivo deste repositório é entregar duas ferramentas técnicas a Média Móvel Exponencial (MME) e o Índice de Força Relativa (IRF) que serão gerados a partir de uam base de dados em um arquivo csv.
+O objetivo deste repositório é entregar duas ferramentas técnicas a Média Móvel Exponencial (MME) e o Índice de Força Relativa (IRF) que serão gerados a partir de uma base de dados em um arquivo csv.
 
 Resumo:<br />
 1 - <a href="#ind_choose">Escolha dos indicadores</a><br />
@@ -15,6 +15,15 @@ Resumo:<br />
 
 
 # <span id="ind_choose">1</span> - Escolha dos indicadores
+- Os indicadores escolhido foram a Média Móvel Exponencial e o Índice de Força Relativa
+- A escolha dos indicadores foi feita tendo em mente a polpularidade do indicador e a sua facilidade de uso, além de outras vantagens que serão apresentadas à seguir
+- As médias móveis ajudam a visualizar as variações do preço de uma forma mais "suavizada". Elas são muito usadas para ter uma referência da tendência de mercado. Uma média móvel muito usada é a de 200 períodos
+- A média móvel tem uma defasagem "natural" com relação aos movimentos do preço do mercado, uma vez que ela é calculada tendo por base preços passados. Tendo em vista esta defasagem a Média Móvel Exponencial veio para "tentar reduzir" essa defasagem
+- Você pode aprender mais sobre a MME clicando neste link: https://www.bussoladoinvestidor.com.br/media-movel-exponencial/
+- Com relação ao IFR ele ajuda a observar o enfraquecimento de uma tendência ou até mesmo o rompimento com a consecutiva criação de uma nova tendência
+- Assim como a MME é um indicador muito difundido e muito simples de usar. Para saber mais sobre o IFR cicle neste link: https://www.bussoladoinvestidor.com.br/indice-de-forca-relativa/
+
+
 # <span id="data">2</span> - A base de dados
 - Para usar este aplicativo devemos baixar a base de dados que está contida no seguinte link: https://www.kaggle.com/mczielinski/bitcoin-historical-data/data
 - O nome da base de dados usada no aplicativo é `bitstampUSD_1-min_data_2012-01-01_to_2020-09-14.csv`, porém este repositório já vem com um pequeno recorte desse arquivo com o mesmo nome para que se possa fazer o primeiro teste do programa
