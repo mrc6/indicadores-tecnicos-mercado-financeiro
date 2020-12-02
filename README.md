@@ -32,7 +32,7 @@ Resumo:<br />
 - Entre na pasta principal do projeto com o comando: `cd project`
 - Execute o programa com o comando: `python3 cli.py`
 
-# <span>4</span> Como usar o programa
+# <span id="how_to_use">4</span> Como usar o programa
 - Como você pode ver a interação com o programa é feito pelo próprio terminal
 - Antes de começar cole a base de dados que você fez o download no diretório `data`
 - Como já tem um arquivo neste diretório com o mesmo nome você deve reescrevê-lo para que você tenha a base de dados atualizada
@@ -57,3 +57,5 @@ erem atualizados
 - A base de dados deve ser salva no diretório `data`
 # Menu Sair
 - Termina a execução do programa
+
+# <span id="comments">4</span> Comentários
