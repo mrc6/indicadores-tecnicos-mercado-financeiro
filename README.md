@@ -14,6 +14,10 @@ Resumo:<br />
 
 
 # <span id="ind_choose">1</span> - Escolha dos indicadores
+# <span id="data">2</span> - A base de dados
+- Para usar este aplicativo devemos baixar a base de dados ue está contida no seguinte link: https://www.kaggle.com/mczielinski/bitcoin-historical-data/data
+- O nome da base de dados usada no aplicativo é `bitstampUSD_1-min_data_2012-01-01_to_2020-09-14.csv`, porém este repositório já vem com um pequeno recorte desse arquivo com o mesmo nome para que se possa fazer o primeiro teste do programa
+- É possivel mudar o nome do arquivo de dados no próprio programa (Veja mais em como usar)
 
 # <span id="how_to_install">3</span> - Como instalar o programa
 - Todos os comando abaixo deverão ser executados no Terminal do Linux
