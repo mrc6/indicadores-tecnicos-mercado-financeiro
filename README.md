@@ -15,9 +15,16 @@ Resumo:<br />
 
 # <span id="ind_choose">1</span> - Escolha dos indicadores
 
-# <span id="how_to_install"> Como instalar o programa</span>
+# <span id="how_to_install">3</span> - Como instalar o programa
 - Todos os comando abaixo deverão ser executados no Terminal do Linux
 - A versão do Python usada deverá ser >= 3.6
-- Para baixar o repositório digite `git clone `
+- É necessário ter o pacote venv instalado para criar um ambiente virtual
+- É necessário ter o pacote pip instalado para instalar as dependências
+# Comandos
+- Para baixar o repositório digite `git clone https://github.com/mrc6/indicadores-tecnicos-mercado-financeiro.git`
 - Para instalar as dependências digite o seguinte comando: `python3 -m pip install -r requirements.txt`
-
+- Entre na pasta do programa com o comando: `cd indicadores-tecnicos-mercado-financeiro
+- Crie um ambiente virtual para rodar o programa com o seguinte comando: `python3 -m venv .venv && source .venv/bin/activate`
+- Instale as dependências com o comando: `python3 -m pip install -r requirements.txt`
+- Entre na pasta principal do projeto com o comando: `cd project`
+- Execute o programa com o comando: `python3 cli.py`
