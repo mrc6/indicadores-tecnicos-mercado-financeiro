@@ -22,7 +22,6 @@ Resumo:<br />
 - É necessário ter o pacote pip instalado para instalar as dependências
 # Comandos
 - Para baixar o repositório digite `git clone https://github.com/mrc6/indicadores-tecnicos-mercado-financeiro.git`
-- Para instalar as dependências digite o seguinte comando: `python3 -m pip install -r requirements.txt`
 - Entre na pasta do programa com o comando: `cd indicadores-tecnicos-mercado-financeiro
 - Crie um ambiente virtual para rodar o programa com o seguinte comando: `python3 -m venv .venv && source .venv/bin/activate`
 - Instale as dependências com o comando: `python3 -m pip install -r requirements.txt`
