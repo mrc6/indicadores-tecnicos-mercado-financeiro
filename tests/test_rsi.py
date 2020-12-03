@@ -79,3 +79,10 @@ def test_if_calc_rs_returns_currect_value():
     avg_l = Decimal('19.18').quantize(TWOPLACES)
     result = Decimal('1.10').quantize(TWOPLACES)
     assert rsi.calc_rs(avg_g, avg_l).quantize(TWOPLACES) == result
+
+
+def test_if_calc_rsi_returns_currect_value():
+    "Testa se a funcao calc_rsi retorna os valores corretos"
+    result = Decimal('54.55').quantize(TWOPLACES)
+    calc = Decimal(rsi.calc_rsi(1.2)).quantize(TWOPLACES)
+    assert calc == result
