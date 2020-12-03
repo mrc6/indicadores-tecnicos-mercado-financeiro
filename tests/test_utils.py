@@ -51,3 +51,19 @@ def test_slice_date(mock_defs):
         start_date = datetime.fromtimestamp(1365752520)
         end_date = datetime.fromtimestamp(1365752580)
         assert utils.slice_data(data, start_date, end_date) == result
+
+
+def test_clear_data(mock_defs):
+    "Testa se os dados serão limpos"
+    with patch("builtins.open", mock_open(read_data=json.dumps(mock_defs))):
+        data = [
+            ["1365752520", '82'],
+            ["1365752540", 'NaN'],
+            ["1365752560", 'NaN'],
+            ["1365752580", '83,48']
+        ]
+        result = [
+            ["1365752520", Decimal(82).quantize(TWOPLACES)],
+            ["1365752580", Decimal(83.48).quantize(TWOPLACES)]
+        ]
+        assert utils.clear_data(data) == result
