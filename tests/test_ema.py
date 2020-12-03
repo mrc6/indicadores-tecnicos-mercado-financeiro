@@ -1,10 +1,7 @@
 import pytest
 import modules
-import json
 from project import ema
-from unittest.mock import mock_open, patch
 from decimal import Decimal
-# from datetime import datetime
 
 
 print(modules)
@@ -38,7 +35,6 @@ def test_if_get_sma_returns_correct_value():
         ["1365752580", Decimal(84.25).quantize(TWOPLACES)],
         ["1365752580", Decimal(83.48).quantize(TWOPLACES)]
     ]
-    # 82.88
     assert ema.get_sma(data, 4, 1) == Decimal(82.88).quantize(TWOPLACES)
 
 
