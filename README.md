@@ -19,13 +19,14 @@ Resumo:<br />
 - A escolha dos indicadores foi feita tendo em mente a popularidade do indicador e a sua facilidade de uso, além de outras vantagens que serão apresentadas à seguir
 - As médias móveis ajudam a visualizar as variações do preço de uma forma mais "suavizada". Elas são muito usadas para ter uma referência da tendência de mercado. Uma média móvel muito usada é a de 200 períodos
 - A média móvel tem uma defasagem "natural" com relação aos movimentos do preço do mercado, uma vez que ela é calculada tendo por base preços passados. Tendo em vista esta defasagem a Média Móvel Exponencial veio para "tentar reduzir" essa defasagem
-- Você pode aprender mais sobre a MME clicando neste link: https://www.bussoladoinvestidor.com.br/media-movel-exponencial/
-- Com relação ao IFR ele ajuda a observar o enfraquecimento de uma tendência ou até mesmo o rompimento com a consecutiva criação de uma nova tendência
-- Assim como a MME, o IFR é um indicador muito difundido e muito simples de usar. Para saber mais sobre o IFR clique neste link: https://www.bussoladoinvestidor.com.br/indice-de-forca-relativa/
-
+- Você pode aprender mais sobre a MME clicando neste link: <a href="https://www.bussoladoinvestidor.com.br/media-movel-exponencial/" target="_blank">https://www.bussoladoinvestidor.com.br/media-movel-exponencial/
+</a>- Com relação ao IFR ele ajuda a observar o enfraquecimento de uma tendência ou até mesmo o rompimento com a consecutiva criação de uma nova tendência
+- Assim como a MME, o IFR é um indicador muito difundido e muito simples de usar. Para saber mais sobre o IFR clique neste link: <a href="https://www.bussoladoinvestidor.com.br/indice-de-forca-relativa/" target="_blank">https://www.bussoladoinvestidor.com.br/indice-de-forca-relativa/
+</a>
 
 # <span id="data">2</span> - A base de dados
-- Para usar este aplicativo devemos baixar a base de dados que está contida no seguinte link: https://www.kaggle.com/mczielinski/bitcoin-historical-data/data
+- Para usar este aplicativo devemos baixar a base de dados que está contida no seguinte link: <a href="https://www.kaggle.com/mczielinski/bitcoin-historical-data/data" target="_blank">https://www.kaggle.com/mczielinski/bitcoin-historical-data/data
+</a>
 - O nome da base de dados usada no aplicativo é `bitstampUSD_1-min_data_2012-01-01_to_2020-09-14.csv`, porém este repositório já vem com um pequeno recorte desse arquivo com o mesmo nome para que se possa fazer o primeiro teste do programa (intervalo de 01-01-2013 à 31-12-2013)
 - É possivel mudar o nome do arquivo de dados no próprio programa (veja mais em <a href="#how_to_use">Como usar o programa</a><br />)
 
@@ -73,7 +74,8 @@ Resumo:<br />
 # Menu Sair
 - Termina a execução do programa
 
-# <span id="comments">5</span> Comentários
+# <span id="comments">5</span> Comentários finais
 - Ao longo deste projeto pude perceber como a linguagem Python é simples e poderosa para manipular dados e criar informações a partir desdes dados
-- Existem bibliotecas específicas para essa manipulação como a `pandas` (https://pandas.pydata.org/) e frameworks como o `Jupyter` (https://jupyter.org/) onde é possível criar uma visualização dos dados e gráficos, mas o objetivo deste repositório é mostrar que é possível fazer a manipulção dos dados usando Python puro
+- Existem bibliotecas específicas para essa manipulação como a `pandas` (<a href="https://pandas.pydata.org/" target="_blank">https://pandas.pydata.org/
+</a>) e frameworks como o `Jupyter` (<a href="https://jupyter.org/" target="_blank">https://jupyter.org/</a>) onde é possível criar uma visualização dos dados e gráficos, mas o objetivo deste repositório é mostrar que é possível fazer a manipulção dos dados usando Python puro
 - Foi um grande aprendizado fazer este programa o que só despertou ainda mais o meu interesse pela análise de dados e o Python
