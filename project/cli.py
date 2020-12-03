@@ -87,8 +87,10 @@ def menu():
             print("2 - MÁXIMO")
             print("3 - MÍNIMO")
             print("4 - FECHAMENTO")
-            price = verify_input_is_number("Digite o Número do Novo Preço: ")
-            change_defs(ema_p, rsi_p, price)
+            np = 5
+            while np >= 5 or np == 0:
+                np = verify_input_is_number("Digite o Número do Novo Preço: ")
+            change_defs(ema_p, rsi_p, np)
             input("Digite ENTER Para Voltar ao Menu Principal")
 
 
