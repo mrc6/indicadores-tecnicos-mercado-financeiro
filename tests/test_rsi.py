@@ -86,3 +86,51 @@ def test_if_calc_rsi_returns_currect_value():
     result = Decimal('54.55').quantize(TWOPLACES)
     calc = Decimal(rsi.calc_rsi(1.2)).quantize(TWOPLACES)
     assert calc == result
+
+
+def test_if_table_with_avgs_returns_correct_value():
+    "Testa se a função table_with_avgs retorna os valores corretos"
+    data = [
+        ['1365752520', Decimal('82.00'), 0, 0, '', ''],
+        ['1365752580', Decimal('81.78'), 0, Decimal('81.78'), '', ''],
+        ['1365752580', Decimal('84.25'), Decimal('84.25'), 0, '', ''],
+        [
+            '1365752580',
+            Decimal('83.48'),
+            0,
+            Decimal('83.48'),
+            Decimal('21.06'),
+            Decimal('41.32')
+        ],
+        ['1365752580', Decimal('84.25'), Decimal('84.25'), 0, '', '']
+    ]
+    result = [
+        ['1365752520', Decimal('82.00'), 0, 0, '', ''],
+        ['1365752580', Decimal('81.78'), 0, Decimal('81.78'), '', ''],
+        ['1365752580', Decimal('84.25'), Decimal('84.25'), 0, '', ''],
+        [
+            '1365752580',
+            Decimal('83.48'),
+            0,
+            Decimal('83.48'),
+            Decimal('21.06'),
+            Decimal('41.32')
+        ],
+        ['1365752580', Decimal('84.25'), Decimal('84.25'), 0, '', '']
+    ]
+    result2 = [
+        ['1365752520', Decimal('82.00'), 0, 0, '', ''],
+        ['1365752580', Decimal('81.78'), 0, Decimal('81.78'), '', ''],
+        ['1365752580', Decimal('84.25'), Decimal('84.25'), 0, '', ''],
+        [
+            '1365752580',
+            Decimal('83.48'),
+            0,
+            Decimal('83.48'),
+            Decimal('21.06'),
+            Decimal('41.32')
+        ],
+        ['1365752580', Decimal('84.25'), Decimal('84.25'), 0, '', '']
+    ]
+    assert rsi.table_with_avgs(data, 4, 4) == result
+    assert rsi.table_with_avgs(result, 4, 5) == result2
