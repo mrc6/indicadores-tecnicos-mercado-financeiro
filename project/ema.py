@@ -1,8 +1,11 @@
 # importando os modulos necessarios para o projeto
+import modules
 from decimal import Decimal
 from datetime import datetime
-from utils import change_notation, read_file, clear_data, slice_data
+from project.utils import change_notation, read_file, clear_data, slice_data
 
+
+assert modules
 # referência para os cálculos
 #  https://www.bussoladoinvestidor.com.br/media-movel-exponencial/
 

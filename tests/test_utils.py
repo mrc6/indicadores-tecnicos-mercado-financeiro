@@ -4,7 +4,6 @@ import json
 from datetime import datetime
 from decimal import Decimal
 from project import utils
-# from project.utils import load_defs
 from unittest.mock import mock_open, patch
 
 

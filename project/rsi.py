@@ -1,8 +1,9 @@
+import modules
 from decimal import Decimal
-from utils import change_notation, load_defs
-from ema import get_sma
+from project.utils import change_notation, load_defs
+from project.ema import get_sma
 
-
+assert modules
 # Referência para os cálculos https://bit.ly/3qexPil
 
 # variáveis no escopo global
