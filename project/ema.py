@@ -23,7 +23,7 @@ def get_sma(data, period, collumn_index):
             sma = sma + change_notation(collumn[collumn_index])
             loop += 1
         if loop == period:
-            return (sma / period).quantize(TWOPLACES)
+            return Decimal((sma / period)).quantize(TWOPLACES)
 
 
 # abrindo os dados do arquivo csv

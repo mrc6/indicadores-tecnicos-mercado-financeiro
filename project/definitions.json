@@ -1,1 +1,1 @@
-{"f_path": "../data/bitstampUSD_1-min_data_2012-01-01_to_2020-09-14.csv", "ema_period": 10, "c_price": 1, "tstp_col": 0, "price_c": 4, "rsi_p": 14, "gci": 3, "lci": 4, "avg_gci": 5, "avg_lci": 6, "rs_c": 7}
+{"f_path": "../data/bitstampUSD_1-min_data_2012-01-01_to_2020-09-14.csv", "ema_period": 2, "c_price": 1, "tstp_col": 0, "price_c": 4, "rsi_p": 2, "gci": 3, "lci": 4, "avg_gci": 5, "avg_lci": 6, "rs_c": 7}
