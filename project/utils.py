@@ -2,7 +2,6 @@ import csv
 import json
 from decimal import Decimal
 from datetime import datetime
-import re
 
 
 # função para carregar as definições de operação
@@ -83,53 +82,3 @@ def clear_data(sliced_data):
             )
             result.append(col)
     return result
-
-
-# recebe o valor numerico de um mes no format Sss
-def get_integer_from_month(str):
-    result = ""
-    if re.search("Jan", str):
-        result = 1
-    elif re.search("Feb", str):
-        result = 2
-    elif re.search("Mar", str):
-        result = 3
-    elif re.search("Apr", str):
-        result = 4
-    elif re.search("May", str):
-        result = 5
-    elif re.search("Jun", str):
-        result = 6
-    elif re.search("Jul", str):
-        result = 7
-    elif re.search("Aug", str):
-        result = 8
-    elif re.search("Sep", str):
-        result = 9
-    elif re.search("Oct", str):
-        result = 10
-    elif re.search("Nov", str):
-        result = 11
-    else:
-        result = 12
-    return result
-
-
-# transforma uma dada no formato dd-Mmm-yy em dateTime
-def get_date(str):
-    d_check = str
-    if len(d_check) == 9:
-        if d_check[2] != "-" or d_check[6] != "-":
-            print("Data informada é inválida")
-        year = int(d_check[7:9]) + 2000
-        tmp_month = (d_check[3:6])
-        month = get_integer_from_month(tmp_month)
-        day = int(d_check[0:2])
-    if len(d_check) == 8:
-        if d_check[1] != "-" or d_check[5] != "-":
-            print("Data informada é inválida")
-        year = int(d_check[6:8]) + 2000
-        tmp_month = (d_check[2:5])
-        month = get_integer_from_month(tmp_month)
-        day = int(d_check[0])
-    return datetime(year, month, day, 00, 00, 00, 000000)
