@@ -1,4 +1,3 @@
-import pytest
 import modules
 from project import ema
 from decimal import Decimal
@@ -8,23 +7,6 @@ print(modules)
 
 # variável do escopo global
 TWOPLACES = Decimal(10) ** -2
-
-
-@pytest.fixture
-def mock_defs():
-    return {
-        "f_path": "../data/dont_care.csv",
-        "ema_period": 10,
-        "c_price": 1,
-        "tstp_col": 0,
-        "price_c": 4,
-        "rsi_p": 14,
-        "gci": 3,
-        "lci": 4,
-        "avg_gci": 5,
-        "avg_lci": 6,
-        "rs_c": 7
-    }
 
 
 def test_if_get_sma_returns_correct_value():
