@@ -1,7 +1,7 @@
 # interface de comunicação com o trader
 from datetime import datetime
 from os import system, name
-from utils import load_defs, change_defs
+from utils import load_defs, change_defs, change_db
 from do_rel import write_csv_file
 
 
@@ -49,10 +49,12 @@ def menu():
         print("1 - Criar Relatorio MME + IFR")
         print("2 - Mostrar Configurações dos Indicadores")
         print("3 - Alterar Configurações dos Indicadores")
+        print("4 - Mudar Nome da Base de Dados")
         print("9 - Sair")
         option = verify_input_is_number("Digite a opção escolhida: ")
         if option == 1:
             clear()
+            print("Criar Relatorio MME + IFR")
             start_date = date_verify(
                 input("Digite a Data Inicial Escolhida (DD-MM-AAAA): ")
             )
@@ -61,11 +63,11 @@ def menu():
             )
             print("Criando o Relatório...(Isso pode demorar alguns minutos)")
             write_csv_file(start_date, end_date)
+            print("Operação Realizada!")
             input("Digite ENTER Para Voltar ao Menu Principal")
         if option == 2:
             clear()
             defs = load_defs()
-
             print("Informações dos Indicadores Técnicos")
             print(f'Periodo da MME: {defs["ema_period"]}')
             print(f'Periodo da IRF: {defs["rsi_p"]}')
@@ -80,6 +82,7 @@ def menu():
             input("Digite ENTER Para Voltar ao Menu Principal")
         if option == 3:
             clear()
+            print("Alterar Configuração dos Indicadores")
             ema_p = verify_input_is_number("Digite o Novo Período da MME: ")
             rsi_p = verify_input_is_number("Digite o Novo Período da IRF: ")
             print("Digite o Tipo de Preço Para Cálculo:")
@@ -91,6 +94,14 @@ def menu():
             while np >= 5 or np == 0:
                 np = verify_input_is_number("Digite o Número do Novo Preço: ")
             change_defs(ema_p, rsi_p, np)
+            print("Operação Realizada!")
+            input("Digite ENTER Para Voltar ao Menu Principal")
+        if option == 4:
+            clear()
+            print("Mudar Nome da Base de Dados")
+            new_db = input("Digite o Nome da Base de Dados com (fff.csv): ")
+            change_db(f'../data/{new_db}')
+            print("Operação Realizada!")
             input("Digite ENTER Para Voltar ao Menu Principal")
 
 

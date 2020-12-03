@@ -25,6 +25,14 @@ def change_defs(ema_p, rsi_p, price):
         file.write(json_to_write)
 
 
+def change_db(db_name):
+    defs = load_defs()
+    defs["f_path"] = db_name
+    with open("definitions.json", "w") as file:
+        json_to_write = json.dumps(defs)
+        file.write(json_to_write)
+
+
 # função muda notação de número no formato nnn,nn
 def change_notation(num):
     if type(num) is Decimal or type(num) is int:
