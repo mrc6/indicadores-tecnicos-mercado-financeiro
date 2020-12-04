@@ -65,6 +65,8 @@ def calc_avgs(last_rsi, actual_diff, period):
 
 
 def calc_rs(avg_g, avg_l):
+    if avg_l == 0:
+        return Decimal(1000000)
     rs = avg_g / avg_l
     return rs
 
@@ -81,7 +83,6 @@ def table_with_avgs(data, period, collumn_index):
     actual_avg = 0
     for prices in data:
         # quando achar a primeira avg
-        print(prices)
         if prices[collumn_index] != "":
             break
         loop += 1
@@ -159,11 +160,9 @@ def return_file_with_ema_rsi(data):
     rsi_l = rsi["f_l_sma"]
     m_2_table = table_with_first_rsi(m_table, defs["rsi_p"], rsi_g, rsi_l)
     # return m_2_table
-    print(defs["avg_gci"])
     m_3_table = table_with_avgs(m_2_table, defs["rsi_p"], defs["avg_gci"])
-    return m_3_table
-    print(defs["avg_lci"])
+    # return m_3_table
     m_4_table = table_with_avgs(m_3_table, defs["rsi_p"], defs["avg_lci"])
-    return m_4_table
+    # return m_4_table
     m_5_table = table_with_rs(m_4_table, defs["rsi_p"], defs["avg_gci"])
     return table_with_rsi(m_5_table, defs["rsi_p"], defs["rs_c"])
