@@ -74,7 +74,7 @@ def calc_rs(avg_g, avg_l):
 
 
 def calc_rsi(rs):
-    rsi = 100 - (100 / (1 + rs))
+    rsi = 100 - (100 / (1 + Decimal(rs)))
     return rsi
 
 
