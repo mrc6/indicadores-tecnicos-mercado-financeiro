@@ -27,7 +27,7 @@ Resumo:<br />
 # <span id="data">2</span> - A base de dados
 - Para usar este aplicativo devemos baixar a base de dados que está contida no seguinte link: <a href="https://www.kaggle.com/mczielinski/bitcoin-historical-data/data" target="_blank">Kaggle - Preço Bitcoin
 </a>
-- O nome da base de dados usada no aplicativo é `bitstampUSD_1-min_data_2012-01-01_to_2020-09-14.csv`, porém este repositório já vem com um pequeno recorte desse arquivo com o mesmo nome para que se possa fazer o primeiro teste do programa (intervalo de 01-01-2013 à 31-12-2013)
+- O nome da base de dados usada no aplicativo é `bitstampUSD_1-min_data_2012-01-01_to_2020-09-14.csv`, porém este repositório já vem com um pequeno recorte desse arquivo com o mesmo nome para que se possa fazer o primeiro teste do programa (intervalo de 12-04-2013 à 13-04-2013)
 - É possivel mudar o nome do arquivo de dados no próprio programa (veja mais em <a href="#how_to_use">Como usar o programa</a><br />)
 
 # <span id="how_to_install">3</span> - Como instalar o programa
@@ -78,3 +78,7 @@ Resumo:<br />
 - Ao longo deste projeto pude perceber como a linguagem Python é simples e poderosa para manipular dados e criar informações a partir desdes dados
 - Existem bibliotecas específicas para essa manipulação como a `pandas` (<a href="https://pandas.pydata.org/" target="_blank">pandas</a>) e frameworks como o `Jupyter` (<a href="https://jupyter.org/" target="_blank">Jupyter</a>) onde é possível criar uma visualização dos dados e gráficos, mas o objetivo deste repositório é mostrar que é possível fazer a manipulção dos dados usando Python puro
 - Foi um grande aprendizado fazer este programa o que só despertou ainda mais o meu interesse pela análise de dados e o Python
+
+# Bônus - Testes
+- Para executar os testes automatizados, na raiz do diretório do projeto, digite o seguinte comando para ir até a pasta tests: `cd tests`
+- Digite o comando `pytest -v` para rodar os testes e ver os resultados
