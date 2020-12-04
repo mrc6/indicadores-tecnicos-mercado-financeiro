@@ -40,11 +40,11 @@ def data_with_first_sma(location, period, collumn_index, s_date, e_date):
     print("Calculando a MME...")
     for collumn in cleaned_data:
         # print(collumn[1])
-        if n <= period - 1:
+        if n < period - 1:
             result.append(collumn + [""])
-        if n == period:
+        if n == period - 1:
             result.append(collumn + [sma])
-        if n > period:
+        if n > period - 1:
             result.append(collumn + [""])
         n += 1
     return result
@@ -68,8 +68,8 @@ def return_file_with_ema(location, period, cidx, s_date, e_date):
         loop += 1
     # cria o arquivo de saida
     for prices in original_data:
-        if original_data.index(prices) < loop:
-            calc_data.append(prices[0:2] + [""])
+        if original_data.index(prices) <= loop:
+            calc_data.append(prices)
         if original_data.index(prices) == loop + 1:
             last_ema = original_data[original_data.index(prices)-1][2]
             actual_price = change_notation(prices[1])
