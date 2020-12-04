@@ -12,13 +12,13 @@ TWOPLACES = Decimal(10) ** -2
 def test_if_get_gain_loses_returns_correct_value():
     "Teste se a função get_gain_loses retorna o valor correto"
     data = [
-        ['1365752460', '82'],
+        ['1365752460', '82.00'],
         ['1365752520', '81.78'],
         ['1365752580', '84.25'],
         ['1365752640', '83.48']
     ]
     result = [
-        ['1365752460', '82', 0, 0],
+        ['1365752460', '82.00', 0, 0],
         ['1365752520', '81.78', 0, Decimal('0.22')],
         ['1365752580', '84.25', Decimal('2.47'), 0],
         ['1365752640', '83.48', 0, Decimal('0.77')]
@@ -29,10 +29,10 @@ def test_if_get_gain_loses_returns_correct_value():
 def test_if_first_rsi_returns_correct_value():
     "Testa se a funcao first_rsi retorna o valor correto"
     data = [
-        ['1365752460', Decimal('82.00'), 0, 0],
-        ['1365752520', Decimal('81.78'), 0, Decimal('0.22')],
-        ['1365752580', Decimal('84.25'), Decimal('2.47'), 0],
-        ['1365752640', Decimal('83.48'), 0, Decimal('0.77')]
+        ['1365752460', '82.00', 0, 0],
+        ['1365752520', '81.78', 0, '0.22'],
+        ['1365752580', '84.25', '2.47', 0],
+        ['1365752640', '83.48', 0, '0.77']
     ]
     result = {'f_g_sma': Decimal('1.24'), 'f_l_sma': Decimal('0.11')}
     assert rsi.first_rsi(data, 2, 2, 3) == result
@@ -42,7 +42,7 @@ def test_if_table_with_first_rsi_returns_correct_value():
     "Testa se a função table_with_first_rsi retorna o valor correto"
     data = [
         ['1365752460', '80.01', 0, 0, 0],
-        ['1365752520', Decimal('82.00'), Decimal('81.00'), Decimal('1.99'), 0],
+        ['1365752520', '82.00', '81.00', '1.99', 0],
         ['1365752580', '83.48', '82.65', '1.48', 0],
         ['1365752640', '83.48', '83.20', 0, 0]
     ]
@@ -51,9 +51,9 @@ def test_if_table_with_first_rsi_returns_correct_value():
         ['1365752460', '80.01', 0, 0, 0, '', ''],
         [
             '1365752520',
-            Decimal('82.00'),
-            Decimal('81.00'),
-            Decimal('1.99'),
+            '82.00',
+            '81.00',
+            '1.99',
             0,
             '',
             ''
