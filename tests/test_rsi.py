@@ -41,24 +41,33 @@ def test_if_first_rsi_returns_correct_value():
 def test_if_table_with_first_rsi_returns_correct_value():
     "Testa se a função table_with_first_rsi retorna o valor correto"
     data = [
-        ['1365752460', Decimal('82.00'), 0, 0],
-        ['1365752520', Decimal('81.78'), 0, Decimal('81.78')],
-        ['1365752580', Decimal('84.25'), Decimal('84.25'), 0],
-        ['1365752640', Decimal('83.48'), 0, Decimal('83.48')]
+        ['1365752460', '80.01', 0, 0, 0],
+        ['1365752520', Decimal('82.00'), Decimal('81.00'), Decimal('1.99'), 0],
+        ['1365752580', '83.48', '82.65', '1.48', 0],
+        ['1365752640', '83.48', '83.20', 0, 0]
     ]
-    gl = {'gsma': Decimal('1.24'), 'lsma': Decimal('0.11')}
+    gl = {'gsma': Decimal('1.74'), 'lsma': Decimal('0.87')}
     result = [
-        ['1365752460', Decimal('82.00'), 0, 0, '', ''],
-        ['1365752520', Decimal('81.78'), 0, Decimal('81.78'), '', ''],
+        ['1365752460', '80.01', 0, 0, 0, '', ''],
+        [
+            '1365752520',
+            Decimal('82.00'),
+            Decimal('81.00'),
+            Decimal('1.99'),
+            0,
+            '',
+            ''
+        ],
         [
             '1365752580',
-            Decimal('84.25'),
-            Decimal('84.25'),
+            '83.48',
+            '82.65',
+            '1.48',
             0,
-            Decimal('1.24'),
-            Decimal('0.11')
+            Decimal('1.74'),
+            Decimal('0.87')
         ],
-        ['1365752640', Decimal('83.48'), 0, Decimal('83.48'), '', '']
+        ['1365752640', '83.48', '83.20', 0, 0, '', '']
     ]
     assert rsi.table_with_first_rsi(data, 2, gl["gsma"], gl["lsma"]) == result
 
@@ -91,20 +100,29 @@ def test_if_calc_rsi_returns_currect_value():
 def test_if_table_with_avgs_returns_correct_value():
     "Testa se a função table_with_avgs retorna os valores corretos"
     data = [
-        ['1365752460', Decimal('82.00'), 0, 0, '', ''],
-        ['1365752520', Decimal('81.78'), 0, Decimal('81.78'), '', ''],
+        ['1365752460', '80.01', 0, 0, 0, '', ''],
+        [
+            '1365752520',
+            '82.00',
+            '81.00',
+            '1.99',
+            0,
+            '',
+            ''
+        ],
         [
             '1365752580',
-            Decimal('84.25'),
-            Decimal('84.25'),
+            '83.48',
+            '82.65',
+            '1.48',
             0,
-            Decimal('1.24'),
-            Decimal('0.11')
+            '1.74',
+            '0.87'
         ],
-        ['1365752640', Decimal('83.48'), 0, Decimal('83.48'), '', '']
+        ['1365752640', '83.48', '83.20', 0, 0, '', '']
     ]
     result = [
-        ['1365752460', Decimal('82.00'), 0, 0, '', ''],
+        ['1365752460', '80.01', 0, 0, 0, '', ''],
         ['1365752520', Decimal('81.78'), 0, Decimal('81.78'), '', ''],
         [
             '1365752580',

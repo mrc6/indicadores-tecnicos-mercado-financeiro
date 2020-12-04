@@ -32,6 +32,7 @@ def write_csv_file(s_date, e_date):
         ])
         # estes são os dados
         for lines in result:
-            writer.writerow(lines[0:3] + [lines[8]])
+            # writer.writerow(lines[0:3] + [lines[8]])
+            writer.writerow(lines)
     print("Relatório Criado!")
     clear_memory()
