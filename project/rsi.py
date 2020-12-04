@@ -24,11 +24,11 @@ def get_gains_losses(data, collumn_index):
             result.append(collumn + [0] + [0])
         if loop > 0:
             if change_notation(collumn[collumn_index]) - last_price > 0:
-                gain = change_notation(collumn[collumn_index] - last_price)
+                gain = change_notation(collumn[collumn_index]) - last_price
                 last_price = change_notation(collumn[collumn_index])
                 result.append(collumn + [gain] + [0])
             elif change_notation(collumn[collumn_index]) - last_price < 0:
-                losses = change_notation(last_price - collumn[collumn_index])
+                losses = last_price - change_notation(collumn[collumn_index])
                 last_price = change_notation(collumn[collumn_index])
                 result.append(collumn + [0] + [losses])
             else:

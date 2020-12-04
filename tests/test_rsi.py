@@ -12,16 +12,16 @@ TWOPLACES = Decimal(10) ** -2
 def test_if_get_gain_loses_returns_correct_value():
     "Teste se a função get_gain_loses retorna o valor correto"
     data = [
-        ["1365752460", Decimal(82).quantize(TWOPLACES)],
-        ["1365752520", Decimal(81.78).quantize(TWOPLACES)],
-        ["1365752580", Decimal(84.25).quantize(TWOPLACES)],
-        ["1365752640", Decimal(83.48).quantize(TWOPLACES)]
+        ['1365752460', '82'],
+        ['1365752520', '81.78'],
+        ['1365752580', '84.25'],
+        ['1365752640', '83.48']
     ]
     result = [
-        ['1365752460', Decimal('82.00'), 0, 0],
-        ['1365752520', Decimal('81.78'), 0, Decimal('0.22')],
-        ['1365752580', Decimal('84.25'), Decimal('2.47'), 0],
-        ['1365752640', Decimal('83.48'), 0, Decimal('0.77')]
+        ['1365752460', '82', 0, 0],
+        ['1365752520', '81.78', 0, Decimal('0.22')],
+        ['1365752580', '84.25', Decimal('2.47'), 0],
+        ['1365752640', '83.48', 0, Decimal('0.77')]
     ]
     assert rsi.get_gains_losses(data, 1) == result
 
@@ -196,9 +196,29 @@ def test_if_table_with_rsi_returns_correct_values():
     ]
 
     result = [
-        [0],
-        [0],
-        [0],
-        [0]
+        ['1365752460', '80.01', '', '', '', '', '', '', ''],
+        ['1365752520', '82.00', '81.00', '1.99', 0, '', '', '', ''],
+        [
+            '1365752580',
+            '83.48',
+            '82.65',
+            '1.48',
+            0,
+            '1.74',
+            0,
+            '1000000.00',
+            Decimal('100.00')
+        ],
+        [
+            '1365752640',
+            '83.48',
+            '83.20',
+            0,
+            0,
+            '0.87',
+            0,
+            '1000000.00',
+            Decimal('100.00')
+        ]
     ]
     assert rsi.table_with_rsi(data, 2, 7) == result
