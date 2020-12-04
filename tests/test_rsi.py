@@ -100,15 +100,14 @@ def test_if_calc_rsi_returns_currect_value():
 def test_if_table_with_avgs_returns_correct_value():
     "Testa se a função table_with_avgs retorna os valores corretos"
     data = [
-        ['1365752460', '80.01', 0, 0, 0, '', ''],
+        ['1365752460', '80.01', "", "", "", ""],
         [
             '1365752520',
             '82.00',
             '81.00',
             '1.99',
             0,
-            '',
-            ''
+            ""
         ],
         [
             '1365752580',
@@ -116,23 +115,15 @@ def test_if_table_with_avgs_returns_correct_value():
             '82.65',
             '1.48',
             0,
-            '1.74',
-            '0.87'
+            '1.74'
         ],
-        ['1365752640', '83.48', '83.20', 0, 0, '', '']
+        ['1365752640', '83.48', '83.20', 0, 0, ""]
     ]
     result = [
-        ['1365752460', '80.01', 0, 0, 0, '', ''],
-        ['1365752520', Decimal('81.78'), 0, Decimal('81.78'), '', ''],
-        [
-            '1365752580',
-            Decimal('84.25'),
-            Decimal('84.25'),
-            0,
-            Decimal('1.24'),
-            Decimal('0.11')
-        ],
-        ['1365752640', Decimal('83.48'), 0, Decimal('83.48'), Decimal('0.62')],
+        ['1365752460', '80.01', '', '', '', ''],
+        ['1365752520', '82.00', '81.00', '1.99', 0, ''],
+        ['1365752580', '83.48', '82.65', '1.48', Decimal('1.74')],
+        ['1365752640', '83.48', '83.20', 0, Decimal('0.87')],
     ]
     result2 = [
         ['1365752460', Decimal('82.00'), 0, 0, '', ''],
@@ -154,8 +145,8 @@ def test_if_table_with_avgs_returns_correct_value():
             Decimal('83.54')
         ],
     ]
-    assert rsi.table_with_avgs(data, 2, 4) == result
-    assert rsi.table_with_avgs(result, 2, 5) == result2
+    assert rsi.table_with_avgs(data, 2, 5) == result
+    assert rsi.table_with_avgs(result, 2, 6) == result2
 
 
 def test_if_table_with_rs_returns_correct_values():

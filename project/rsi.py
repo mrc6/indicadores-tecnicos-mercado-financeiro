@@ -60,7 +60,9 @@ def table_with_first_rsi(data, period, rsi_g, rsi_l):
 
 
 def calc_avgs(last_rsi, actual_diff, period):
-    rs = actual_diff + Decimal((last_rsi * (period - 1)) / period)
+    l_rsi = Decimal(last_rsi)
+    act_diff = Decimal(actual_diff)
+    rs = act_diff + Decimal((l_rsi * (period - 1)) / period)
     return rs
 
 
