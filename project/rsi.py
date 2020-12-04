@@ -24,11 +24,11 @@ def get_gains_losses(data, collumn_index):
             result.append(collumn + [0] + [0])
         if loop > 0:
             if change_notation(collumn[collumn_index]) - last_price > 0:
-                gain = change_notation(collumn[collumn_index])
+                gain = change_notation(collumn[collumn_index] - last_price)
                 last_price = change_notation(collumn[collumn_index])
                 result.append(collumn + [gain] + [0])
             elif change_notation(collumn[collumn_index]) - last_price < 0:
-                losses = change_notation(collumn[collumn_index])
+                losses = change_notation(last_price - collumn[collumn_index])
                 last_price = change_notation(collumn[collumn_index])
                 result.append(collumn + [0] + [losses])
             else:
@@ -46,13 +46,13 @@ def first_rsi(data, period, g_col_idx, l_col_idx):
 
 def table_with_first_rsi(data, period, rsi_g, rsi_l):
     result = []
-    n = 0
+    n = 1 # ignora a primeira linha pois não tem ganhos / perdas
     for collumn in data:
-        if n < period - 1:
+        if n < period:
             result.append(collumn + [""] + [""])
-        if n == period - 1:
+        if n == period:
             result.append(collumn + [rsi_g] + [rsi_l])
-        if n > period - 1:
+        if n > period:
             result.append(collumn + [""] + [""])
         n += 1
     return result
@@ -156,6 +156,7 @@ def return_file_with_ema_rsi(data):
     rsi_g = rsi["f_g_sma"]
     rsi_l = rsi["f_l_sma"]
     m_2_table = table_with_first_rsi(m_table, defs["rsi_p"], rsi_g, rsi_l)
+    return m_2_table
     m_3_table = table_with_avgs(m_2_table, defs["rsi_p"], defs["avg_gci"])
     m_4_table = table_with_avgs(m_3_table, defs["rsi_p"], defs["avg_lci"])
     m_5_table = table_with_rs(m_4_table, defs["rsi_p"], defs["avg_gci"])

@@ -18,7 +18,7 @@ def write_csv_file(s_date, e_date):
         # variável com a tabela da EMA
         ema_table = return_file_with_ema(path, period, price_c, s_date, e_date)
         # variável com a tabela com EMA + RSI
-        # result = return_file_with_ema_rsi(ema_table)
+        result = return_file_with_ema_rsi(ema_table)
 
         # É necessário passar o arquivo e o cabeçalho
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
@@ -31,8 +31,7 @@ def write_csv_file(s_date, e_date):
             f'RSI({defs["rsi_p"]})'
         ])
         # estes são os dados
-        for lines in ema_table:
-        # for lines in result:
+        for lines in result:
             # writer.writerow(lines[0:3] + [lines[8]])
             writer.writerow(lines)
     print("Relatório Criado!")
