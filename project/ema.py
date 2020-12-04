@@ -39,11 +39,12 @@ def data_with_first_sma(location, period, collumn_index, s_date, e_date):
     sma = get_sma(cleaned_data, period, collumn_index)
     print("Calculando a MME...")
     for collumn in cleaned_data:
-        if n < period - 1:
+        # print(collumn[1])
+        if n <= period - 1:
             result.append(collumn + [""])
-        if n == period - 1:
+        if n == period:
             result.append(collumn + [sma])
-        if n > period - 1:
+        if n > period:
             result.append(collumn + [""])
         n += 1
     return result
