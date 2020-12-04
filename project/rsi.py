@@ -81,7 +81,8 @@ def table_with_avgs(data, period, collumn_index):
     actual_avg = 0
     for prices in data:
         # quando achar a primeira avg
-        if prices[collumn_index] >= 0:
+        print(prices)
+        if prices[collumn_index] != "":
             break
         loop += 1
     # cria o arquivo de saida
@@ -157,7 +158,11 @@ def return_file_with_ema_rsi(data):
     rsi_g = rsi["f_g_sma"]
     rsi_l = rsi["f_l_sma"]
     m_2_table = table_with_first_rsi(m_table, defs["rsi_p"], rsi_g, rsi_l)
+    # return m_2_table
+    print(defs["avg_gci"])
     m_3_table = table_with_avgs(m_2_table, defs["rsi_p"], defs["avg_gci"])
+    return m_3_table
+    print(defs["avg_lci"])
     m_4_table = table_with_avgs(m_3_table, defs["rsi_p"], defs["avg_lci"])
     return m_4_table
     m_5_table = table_with_rs(m_4_table, defs["rsi_p"], defs["avg_gci"])
