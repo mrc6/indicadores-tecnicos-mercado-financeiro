@@ -39,6 +39,7 @@ def get_gains_losses(data, collumn_index):
 
 
 def first_rsi(data, period, g_col_idx, l_col_idx):
+    ignore_1st, *data = data  # ignora a primeira linha, sem ganhos / perdas
     f_g_sma = get_sma(data, period, g_col_idx)
     f_l_sma = get_sma(data, period, l_col_idx)
     return {"f_g_sma": f_g_sma, "f_l_sma": f_l_sma}
@@ -46,13 +47,13 @@ def first_rsi(data, period, g_col_idx, l_col_idx):
 
 def table_with_first_rsi(data, period, rsi_g, rsi_l):
     result = []
-    n = 1 # ignora a primeira linha pois não tem ganhos / perdas
+    n = 1  # ignora a primeira linha pois não tem ganhos / perdas
     for collumn in data:
-        if n < period:
+        if n <= period:
             result.append(collumn + [""] + [""])
-        if n == period:
+        if n == period + 1:
             result.append(collumn + [rsi_g] + [rsi_l])
-        if n > period:
+        if n > period + 1:
             result.append(collumn + [""] + [""])
         n += 1
     return result
