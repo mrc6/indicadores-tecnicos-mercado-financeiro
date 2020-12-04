@@ -159,10 +159,7 @@ def return_file_with_ema_rsi(data):
     rsi_g = rsi["f_g_sma"]
     rsi_l = rsi["f_l_sma"]
     m_2_table = table_with_first_rsi(m_table, defs["rsi_p"], rsi_g, rsi_l)
-    # return m_2_table
     m_3_table = table_with_avgs(m_2_table, defs["rsi_p"], defs["avg_gci"])
-    # return m_3_table
     m_4_table = table_with_avgs(m_3_table, defs["rsi_p"], defs["avg_lci"])
-    # return m_4_table
     m_5_table = table_with_rs(m_4_table, defs["rsi_p"], defs["avg_gci"])
     return table_with_rsi(m_5_table, defs["rsi_p"], defs["rs_c"])
